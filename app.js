@@ -1,19 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const parent = React.createElement(
-  'div',{id:'parent'},
-  [
-    React.createElement('div',{id:'child1'},
-      [
-        React.createElement('h1',{},'heading1'),
-        React.createElement('h2',{},'heading2')
-      ]),
-    React.createElement('div',{id:'child2'},[
-      React.createElement('h1',{},'heading1'),
-      React.createElement('h2',{},'heading2')
-    ])
-  ]);
+// React.createElement => object => HtmlElement(render)
+const heading = React.createElement('h1', { id: 'heading' }, "Namaste React");
 
-  const root = ReactDOM.createRoot(document.getElementById('root'));
-  root.render(parent);
+// JSX syntax - It is not Html but it is html like
+// JSX is transpiled before it reaches JS => Parcel-> babel
+// JSX element is transpiled => reactElement( Js object) => Html Element (render)
+const JSXHeading = (<h1 className="heading">
+  Namaste React using JSX
+</h1>)
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(JSXHeading);
